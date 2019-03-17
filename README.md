@@ -1,0 +1,1 @@
+In this exercise I am creating the game Rock, Paper, Scissors using JS fundamentals.  The game will allow for player input and will play against randomized computer output.  This game will help cement some of the basic JS fundamentals that I have learned through TOP.
