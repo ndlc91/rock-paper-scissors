@@ -1,0 +1,54 @@
+<html>
+<title>Rock, Paper, Scissors</title>
+<body>
+    <script>
+    
+    //generate computer selection
+    
+    function computerPlay() {
+        let computerChoices = ['rock', 'paper', 'scissors'];
+        let randomSelection = Math.floor(Math.random() * computerChoices.length);
+        return computerChoices[randomSelection];
+
+    }
+
+    //input player selection
+    function playerSelection() {
+        let playerInput = prompt("rock, paper, or scissors?").toLowerCase();
+        return playerInput;
+    }
+
+    //play one round of the game
+
+    function round()
+        if (playerSelection === computerPlay) {
+            //draw conditions
+            return "It's a draw!  Try again."
+          //player win conditions  
+        } elseif(playerSelection === "rock", computerPlay === "scissors"); {
+            return "Player wins!  Rock beats scissors"            
+
+        } elseif(playerSelection === "paper", computerPlay === "rock"); {
+            return "Player wins!  Paper beats rock"
+        } elseif(playerSelection === "scissors", computerPlay === "paper"); {
+            return "Player wins!  Scissors beats paper!"
+            //computer win conditions
+        } elseif(playerSelection === "rock", computerPlay === "paper"); {
+            return "Computer wins!  Paper beats rock"
+        } elseif(playerSelection === "paper", computerPlay === "scissors"); {
+            return "Computer wins! Scissors beats paper"
+        } else {
+            return "Computer wins! Rock beats scissors";
+        }
+
+
+
+    
+
+    
+    
+    
+    
+    </script>
+</body>
+</html>
