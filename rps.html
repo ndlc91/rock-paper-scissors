@@ -2,40 +2,54 @@
 <title>Rock, Paper, Scissors</title>
 <body>
     <script>
-    
+    let playerScore = 0;
+    let computerScore = 0;
+
     //generate computer selection
     function computerPlay() {
         let computerChoices = ['rock', 'paper', 'scissors'];
         let randomSelection = Math.floor(Math.random() * computerChoices.length);
-        return computerChoices[randomSelection];
+        return (computerChoices[randomSelection]);
     }
 
     //input player selection
     function playerSelection() {
         let playerInput = prompt("rock, paper, or scissors?").toLowerCase();
-        return playerInput;
+        return (playerInput);
     }
 
     //play one round of the game
-    function round()
+    function playRound() {
+        let playerChoice = playerSelection();
+        let computerChoice = computerPlay();
         //draw conditions
-        if (playerSelection === computerPlay) {
-            return "It's a draw!  Try again."
+        if(playerChoice === computerChoice) {
+            return ("It's a draw!  Try again.");
           //player win conditions  
-        } elseif(playerSelection === "rock", computerPlay === "scissors"); {
-            return "Player wins!  Rock beats scissors"            
-        } elseif(playerSelection === "paper", computerPlay === "rock"); {
-            return "Player wins!  Paper beats rock"
-        } elseif(playerSelection === "scissors", computerPlay === "paper"); {
-            return "Player wins!  Scissors beats paper!"
+        } else if(playerChoice === "rock" && computerChoice === "scissors" || 
+                  playerChoice === "paper" && computerChoice === "rock" || 
+                  playerChoice === "scissors" && computerChoice === "paper") {
+            playerScore++;
+            return ("Player wins the round! " + playerChoice + " beats " + computerChoice);
             //computer win conditions
-        } elseif(playerSelection === "rock", computerPlay === "paper"); {
-            return "Computer wins!  Paper beats rock"
-        } elseif(playerSelection === "paper", computerPlay === "scissors"); {
-            return "Computer wins! Scissors beats paper"
+        } else if(playerChoice === "rock" && computerChoice === "paper" ||
+                  playerChoice === "paper" && computerChoice === "scissors" ||
+                  playerChoice === "scissors" && computerChoice === "rock") {
+            computerScore++;
+            return ("Computer wins the round! " + computerChoice + " beats " + playerChoice);
         } else {
-            return "Computer wins! Rock beats scissors";
+            return ("please enter rock, paper, or scissors.");
         }
+    }
+
+
+    function game() {
+        for (round = 0; round < 5; round++) {
+            console.log(playRound())
+        }
+        return("Game over!  Your score is " + playerScore + " and the computer score is " + computerScore);
+
+    }
 
     </script>
 </body>
